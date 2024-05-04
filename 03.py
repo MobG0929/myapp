@@ -13,7 +13,7 @@ def init_page():
         page_title="My Great ChatGPT",
         page_icon="🤗"
     )
-    st.header("My Great ChatGPT 🤗")
+    st.header("My Great てるぬまGPT 🤗")
     st.sidebar.title("Options")
 
 
@@ -21,7 +21,7 @@ def init_messages():
     clear_button = st.sidebar.button("Clear Conversation", key="clear")
     if clear_button or "messages" not in st.session_state:
         st.session_state.messages = [
-            SystemMessage(content="絶対に罵倒を混ぜ込んだ関西弁で返してください。たまに発狂してください。")
+            SystemMessage(content="絶対に罵倒を混ぜ込んだ関西弁で返してください。")
         ]
         st.session_state.costs = []
 
@@ -69,7 +69,8 @@ def main():
             with st.chat_message('user'):
                 st.markdown(message.content)
         else:  # isinstance(message, SystemMessage):
-            st.write(f"System message: {message.content}")
+            pass
+            #st.write(f"System message: {message.content}")
 
     costs = st.session_state.get('costs', [])
     st.sidebar.markdown("## Costs")
